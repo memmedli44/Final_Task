@@ -8,7 +8,7 @@ namespace book.enums
 {
     public enum GenreEnums
     {
-        Fantasy,
+        Fantasy=1,
         Mystery,
         Thriller,
         Romance,

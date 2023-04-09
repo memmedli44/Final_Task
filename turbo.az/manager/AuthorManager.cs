@@ -20,8 +20,32 @@ namespace book.meneger
 
         public void Edit(Author item)
         {
-            throw new NotImplementedException();
+            int index = Array.IndexOf(data, item);
+
+            if (index == -1) 
+
+                return;
+
+            var found = data[index];
+
+            found.Name = item.Name;
         }
+        public void Remove(Author item)
+        {
+            int index = Array.IndexOf(data, item);
+
+            if (index == -1)
+                return;
+
+            int len = data.Length - 1;
+            for (int i = index; index < len; index++)
+            {
+                data[i] = data[i + 1];
+            }
+            Array.Resize(ref data, len);
+        }
+
+
 
         public Author this[int index] 
         {
@@ -42,6 +66,16 @@ namespace book.meneger
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public Author GetbyId(int id)
+        {
+            return Array.Find(data, item => item.Id == id);
+        }
+
+        public Author[] FindbyName(string name)
+        {
+            return Array.FindAll(data, item => item.Name.ToLower().StartsWith(name.ToLower()));
         }
     }
 }

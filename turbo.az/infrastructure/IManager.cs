@@ -10,5 +10,9 @@ namespace book.infrastructure
     {
         void Add(T item);
         void Edit(T item);
+        void Remove(T item);       
+        T GetbyId(int id);
+        T[] FindbyName(string name);
+
     }
 }

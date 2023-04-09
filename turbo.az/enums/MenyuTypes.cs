@@ -8,7 +8,7 @@ namespace book.enums
 {
     public enum MenyuTypes:byte
     {
-        AuthorAdd,
+        AuthorAdd=1,
         AuthorEdit,
         AuthorRemove,
         AuthorGetAll,
@@ -21,5 +21,7 @@ namespace book.enums
         BookGetAll,
         BookFindbyName,
         BookGetbyId,
+
+        SaveAndExit,
     }
 }
